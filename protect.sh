@@ -28,7 +28,7 @@ if [ ! -f "$JAXX_LS_PATH"  ]
 then
   echo "Jaxx Desktop not found!"
 else
-  echo "$PASSWORD" > $JAXX_LS_PATH.hash
+  echo "$PASSWORD" > "$JAXX_LS_PATH.hash"
   openssl aes-128-cbc -salt -in "$JAXX_LS_PATH" -out "$JAXX_LS_PATH.safe" -k "$PASSWORD" && rm "$JAXX_LS_PATH"
 fi
 
